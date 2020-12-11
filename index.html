@@ -7,19 +7,22 @@ window.onload = function () {
 }
   
 function copyToClipboard() {
-  alert("aaaa");
-  const element = document.createElement('textarea');
-  element.value = "테스트입니다다";
-  element.setAttribute('readonly', '');
-  element.style.position = 'absolute';
-  element.style.left = '-9999px';
-  document.body.appendChild(element);
-  element.select();
-  var returnValue = document.execCommand('copy');
-  document.body.removeChild(element);
-  if (!returnValue) {
-    throw new Error('copied nothing');
-  }
+  if(confirm("계좌번호를 복사하시겠습니까?")){
+			  const element = document.createElement('textarea');
+			  element.value = '110190771035';
+			  element.setAttribute('readonly', '');
+			  element.style.position = 'absolute';
+			  element.style.left = '-9999px';
+			  document.body.appendChild(element);
+			  element.select();
+			  var returnValue = document.execCommand('copy');
+			  document.body.removeChild(element);
+			  if (!returnValue) {
+			    throw new Error('copied nothing');
+			  }else{
+				alert("복사되었습니다.");
+			  }
+		  } 
 }
 </script>
 
