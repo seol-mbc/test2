@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 
 <script type="text/javascript">
+//$(document).ready(){
 
+
+//}
 window.onload = function () {
-    copyToClipboard22('hnum')
-	//copyToClipboard() ;
+  var h_num = document.getElementById('h_num'); // header 객체에 onclick 이벤트 속성을 연결 
+  h_num.onclick = function() { copyToClipboard22("110190771035");}
+  var s_num = document.getElementById('s_num'); // header 객체에 onclick 이벤트 속성을 연결 
+  s_num.onclick = function() { copyToClipboard22("110309359390");}
+
 }
-function copyToClipboard22(elementId) {
-		  var aux = document.createElement("input");
-		  aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+function copyToClipboard22(account) {
+		  var aux = document.createElement("input");		  
+		  aux.setAttribute("value", account);
 		  document.body.appendChild(aux);
 		  aux.select();
 		  document.execCommand("copy");
-      document.body.removeChild(aux);
-	alert("복사되었습니다.");
+		  document.body.removeChild(aux);
+		  alert("복사되었습니다.");
 		}
 function copyToClipboard() {
   if(confirm("계좌번호를 복사하시겠습니까?")){
@@ -58,5 +64,25 @@ function copyToClipboard() {
 }
 </script>
 <html>
-	<p class="account_num grm_account_num" id="h_num">tttttt</p>
+	   <div class="col-xs-12 col-sm-6 col-md-6 item">
+                <div class="img-wrapper">
+                    <img src="https://lh3.googleusercontent.com/5NBI4Iv0sei0b33gepPIOGqbhlIzRjwTfBEqeVoExySIOlNzQTQBX6smDRdOep3aAR14iRYLPVL3SU9JEcTOAvU98Rz-jVnaS2Tw_cMW16x6XnYIPsvM=w600-h600-n" class="img-responsive" data-attach="true" data-fixedsize="true" data-fixed-width="200" style="width: 200px;">
+                </div>
+                <div class="text-box" id = "h_num">
+                    <h5 class="head_title" data-edit="true" data-selector="h5.head_title" ><span  class="fsize20"><span style="font-family: 'Seoul Hangang';">건희에게 마음전하기 </span></span></h5>
+                    <img src="//storage.googleapis.com/i.addblock.net/template/tplRourei-divider0.png">
+                    <p data-edit="true" data-selector="p" class="" ><span class="fsize18" ><span style="font-family: 'Seoul Hangang';">신한&nbsp;</span>110-190-771035</span></p>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-md-6 item">
+                <div class="img-wrapper">
+                    <img src="https://lh3.googleusercontent.com/kaYk03vyAXBJvqvGVHlRLZqmYI7tadjUlJIULCpT_qBQ2X1z3gQvi48hRpWBqGs8ph0pED2j8gCzb5UG2t51Cxn5Qb9FaX1jfWnpQw_l6B1fQuCmHPrQ6zg=w600-h600-n" class="img-responsive" data-attach="true" data-fixedsize="true" data-fixed-width="200" style="width: 200px;">
+                </div>
+                <div class="text-box"  id = "s_num">
+                    <h5 class="head_title" data-edit="true" data-selector="h5.head_title" ><span style="font-family: 'Seoul Hangang';"><span class="fsize20" >연재에게 마음전하기</span></span></h5>
+                    <img src="//storage.googleapis.com/i.addblock.net/template/tplRourei-divider0.png">
+                    <p data-edit="true" data-selector="p" class="" ><span  class="fsize18"><span style="font-family: 'Seoul Hangang';">신한</span> 110-309-359390</span></p>
+                </div>
+            </div>
 </html>
